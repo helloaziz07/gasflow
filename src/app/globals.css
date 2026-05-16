@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts Import ─── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* ─── Base Layer ─── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: #0a0a1a;
+    color: #e0e7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.3);
+    color: #fff;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+  }
+}
+
+/* ─── Component Layer ─── */
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border border-surface-border
+      bg-surface-card/60 backdrop-blur-xl;
+  }
+
+  /* Glowing border effect */
+  .glow-border {
+    @apply relative rounded-2xl;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+    padding: 1px;
+  }
+  .glow-border > * {
+    @apply rounded-2xl bg-surface-card;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2
+      rounded-xl px-6 py-3 font-semibold text-white
+      bg-gradient-to-r from-primary-600 to-primary-500
+      shadow-glow-sm transition-all duration-300
+      hover:shadow-glow-md hover:scale-[1.02]
+      active:scale-[0.98]
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* Input field */
+  .input-field {
+    @apply w-full rounded-xl border border-surface-border
+      bg-surface-card/80 px-4 py-3 text-primary-100
+      placeholder:text-primary-100/30
+      focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500/50
+      transition-all duration-200;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-accent-purple to-accent-cyan
+      bg-clip-text text-transparent;
+  }
+
+  /* Shimmer effect for loading */
+  .shimmer {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      90deg,
+      transparent 25%,
+      rgba(99, 102, 241, 0.1) 50%,
+      transparent 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* ─── Utility Layer ─── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
