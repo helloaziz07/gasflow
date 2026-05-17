@@ -71,7 +71,7 @@ export default function MintForm() {
                   id="recipientName"
                   type="text"
                   className="input-field"
-                  placeholder="e.g., Lakshay Vig"
+                  placeholder="e.g., John Doe"
                   value={recipientName}
                   onChange={(e) => setRecipientName(e.target.value)}
                   disabled={status === "pending"}
@@ -91,7 +91,7 @@ export default function MintForm() {
                   id="title"
                   type="text"
                   className="input-field"
-                  placeholder="e.g., Hackathon Winner"
+                  placeholder="e.g., Certificate of Excellence"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   disabled={status === "pending"}
@@ -110,7 +110,7 @@ export default function MintForm() {
                 <textarea
                   id="achievement"
                   className="input-field min-h-[80px] resize-none"
-                  placeholder="e.g., First place in the MIT ADT AI Grand Challenge"
+                  placeholder="e.g., Successfully completed the Web3 Development Program"
                   value={achievement}
                   onChange={(e) => setAchievement(e.target.value)}
                   disabled={status === "pending"}

@@ -6,6 +6,11 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     // Fix for WalletConnect / RainbowKit encoding issues
     config.externals.push("pino-pretty", "lokijs", "encoding");
+    // Fix for MetaMask SDK trying to import React Native modules in browser
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@react-native-async-storage/async-storage': false,
+    };
     return config;
   },
 };

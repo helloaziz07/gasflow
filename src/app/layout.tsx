@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="min-h-screen bg-surface text-primary-100 antialiased">
+      <body className="min-h-screen bg-surface text-primary-100 antialiased" suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>
     </html>
