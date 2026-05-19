@@ -10,6 +10,8 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@react-native-async-storage/async-storage': false,
+      '@solana/web3.js': false,
+      '@mysten/sui/jsonRpc': false,
     };
     return config;
   },
